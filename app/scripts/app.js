@@ -1,7 +1,7 @@
 (function() {
      function config($stateProvider) {
          $stateProvider
-         .state();   
+          .state();  
      }
     angular
          .module('blocChat', ['ui.router', 'firebase'])
