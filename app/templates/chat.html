@@ -1,7 +1,11 @@
-<section>Bloc Chat
+<section>
+    <div ng-controller="ChatCtrl as $ctrl"> 
+        Bloc Chat <button type="button" class="btn btn-default" ng-click="$ctrl.open()">New room</button>
+    </div>
+
     <div  ng-repeat="Room in chat.rooms" >
            
-        {{Room}}
+        {{Room.$value}}
         
     </div>
 </section>
