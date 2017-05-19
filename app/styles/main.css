@@ -1,0 +1,20 @@
+.chat-rooms {
+    
+    
+    display: inline-block;
+}
+.room-messages {
+   display: inline-block;
+}
+
+.chat-message {
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #000;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.chat-message:nth-child(even) {
+    background-color: #ddd;
+}

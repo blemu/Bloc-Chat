@@ -7,6 +7,7 @@
       all: rooms,
       addRoom: function (name) {
           rooms.$add(name);
+          var sentAt = Firebase.ServerValue.TIMESTAMP;
       }
     };
   }

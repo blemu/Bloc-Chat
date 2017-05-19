@@ -1,11 +1,20 @@
 <section>
-    <div ng-controller="ChatCtrl as $ctrl"> 
-        Bloc Chat <button type="button" class="btn btn-default" ng-click="$ctrl.open()">New room</button>
-    </div>
+    <h4>Bloc Chat</h4>    
+    <div class="chat-rooms" >
+        <button type="button" class="btn btn-default" ng-click="chat.open()">New room</button>
+        <div ng-repeat="Room in chat.rooms" ng-click="chat.startChat(Room.$id)">
 
-    <div  ng-repeat="Room in chat.rooms" >
-           
-        {{Room.$value}}
-        
+            {{Room.$value}}
+
+        </div>
     </div>
+    
+    <div class="room-messages">
+            <div ng-repeat="message in chat.messages" class="chat-message">{{message.sender}}: {{message.msg}} <span class="timestamp">{{message.sentAt}}</span></div>
+        <div>
+            <input type="text" ng-model="newMessageText" placeholder="Send a message" /><button type="button" ng-click="chat.sendMessage()">Send</button>
+        </div>
+    </div> 
+    
+    
 </section>

@@ -1,7 +1,10 @@
 (function() {
-  function ChatCtrl(Room, $uibModal) {
+  function ChatCtrl(Room, Message, $uibModal) {
 
     this.rooms = Room.all;
+    this.messages = null;
+      
+      var ctrl = this;
     
       this.open = function () {
         console.log('Open the modal');
@@ -18,9 +21,19 @@
              console.log('They have clicked Cancel'); 
           });
       };
+      
+      
+        this.startChat = function (roomId) {
+            ctrl.messages = Message.getByRoomId(roomId);
+            console.log(ctrl.messages);
+        };
+      
+      this.sendMessage = function () {
+        // ctrl.newMessageText  
+      };
   }
 
   angular
     .module('blocChat')
-    .controller('ChatCtrl', ['Room', '$uibModal', ChatCtrl]);
+    .controller('ChatCtrl', ['Room','Message', '$uibModal', ChatCtrl]);
 })();
